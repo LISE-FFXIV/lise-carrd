@@ -1,0 +1,357 @@
+@use "variables" as *;
+
+body {
+  background: $background;
+  margin: 0;
+  font-optical-sizing: auto;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
+
+.home {
+  display: grid;
+  grid-template-columns:
+    minmax(410px, 500px)
+    minmax(0, 1fr)
+    minmax(284px, 360px);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  min-height: 100vh;
+  grid-template-areas: "menu content image";
+  color: $color-text-primary;
+}
+
+// ==============================
+// → SECTION : MENU
+// ==============================
+
+.menu {
+  grid-area: menu;
+  background: $bg-primary;
+  position: relative;
+  width: 500px;
+  padding: 58px;
+  z-index: 0;
+
+  &:before {
+    position: absolute;
+    content: "";
+    background: $blue-primary;
+    width: 370px;
+    height: 370px;
+    filter: blur(200px);
+    top: -130px;
+    left: -225px;
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+nav {
+  margin-top: 24px;
+  text-align: right;
+  .titre {
+    font-family: inter;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 8px;
+
+    &:before {
+      font-family: "Font Awesome 7 Free";
+      font-weight: 800;
+      content: "\f101";
+      margin-right: 14px;
+      color: $blue-tertiary;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  a {
+    padding: 10px 14px;
+    background: $bg-secondary;
+    text-decoration: none;
+    font-size: 16px;
+    color: $color-text-primary;
+    font-family: inter;
+    font-weight: 500;
+    border-radius: 4px;
+
+    &.active {
+      background: $blue-tertiary;
+      display: flex;
+      align-items: center;
+
+      &:before {
+        font-family: "Font Awesome 7 Free";
+        font-weight: 800;
+        content: "\f111";
+        margin-right: 10px;
+        font-size: 6px;
+        color: $bg-primary;
+      }
+    }
+  }
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: flex-end;
+
+  .profilePicture {
+    width: 200px;
+    height: 200px;
+    border-radius: 999px;
+    padding: 20px;
+    border: 6px solid var(--brand-primary, #435581);
+  }
+}
+
+.name {
+  font-family: "Playfair Display", serif;
+  font-size: 84px;
+  line-height: 70px;
+  text-align: right;
+
+  .lise {
+    font-weight: 700;
+    color: $blue-tertiary;
+  }
+
+  .eurelt {
+    font-weight: 900;
+  }
+}
+
+.rank {
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  background: rgb(28, 28, 30);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.menu {
+  .quote {
+    position: relative;
+    gap: 18px;
+    font-family: "Source Serif 4", serif;
+    font-size: 37px;
+    text-align: right;
+    display: flex;
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+
+      width: 4px;
+      height: 100%;
+      background: url("../images/trait.png");
+
+      opacity: 0.8;
+    }
+
+    p {
+      margin-right: 28px;
+      position: relative;
+      &:before,
+      &:after {
+        font-size: 120px;
+        font-weight: 900;
+        position: absolute;
+        color: $background;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      &:before {
+        content: "“";
+        top: -26px;
+        left: 45px;
+      }
+
+      &:after {
+        content: "”";
+        bottom: -66px;
+        right: -18px;
+      }
+
+      i {
+        font-style: italic;
+        font-weight: 600;
+      }
+
+      b {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+
+        &:before {
+          position: absolute;
+          top: 43%;
+          bottom: auto;
+          width: 100%;
+          height: 11px;
+          z-index: -1;
+          background: $blue-primary;
+          //transform: rotate(-3deg);
+          border-radius: 4px;
+          content: "";
+        }
+      }
+    }
+
+    u {
+      position: relative;
+      text-decoration: none;
+      &:before {
+        background: url("../images/quote-red.png");
+        content: "";
+        width: 119px;
+        height: 108px;
+        position: absolute;
+        background-repeat: no-repeat;
+        z-index: 1;
+        top: 11px;
+      }
+
+      &:after {
+        content: "LIES";
+        z-index: 2;
+        position: absolute;
+        top: 0px;
+        font-family: "Chelsea Market", system-ui;
+        font-weight: 400;
+        left: 28px;
+        top: 3px;
+      }
+    }
+  }
+}
+
+// ==============================
+// → SECTION : CONTENT
+// ==============================
+
+.content {
+  grid-area: content;
+  //background: green;
+  padding: 58px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  .quote {
+    font-family: "Source Serif 4", serif;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  // • HEADER QUOTES
+  .quotes {
+    text-align: right;
+
+    .quote-secondary {
+      font-size: 38px;
+
+      & b {
+        color: $blue-tertiary;
+      }
+    }
+  }
+
+  // • GALLERIE DES IMAGES
+  .image-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 0;
+
+    img {
+      width: 100%;
+      height: 113px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+  }
+
+  // • TEXT
+  .quote {
+    &-blue b {
+      color: $blue-tertiary;
+    }
+
+    &-red b {
+      color: $red-tertiary;
+    }
+  }
+  .lore-text {
+    font-family: inter;
+    font-size: 18px;
+    padding: 12px 0px;
+
+    .underline {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+
+      &:before {
+        position: absolute;
+        top: 72%;
+        bottom: auto;
+        width: 100%;
+        height: 4px;
+        z-index: -1;
+        background: $red-primary;
+        //transform: rotate(-3deg);
+        border-radius: 4px;
+        content: "";
+      }
+    }
+
+    b {
+      color: $blue-secondary;
+    }
+
+    i {
+      opacity: 0.5;
+    }
+  }
+}
+
+// ==============================
+// → SECTION : IMAGE
+// ==============================
+
+.image {
+  grid-area: image;
+  background-image: url("../images/valentine.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 58px 58px 58px 0px;
+  background-position: center;
+  border-radius: 24px;
+  border: 1px solid $color-border;
+}
