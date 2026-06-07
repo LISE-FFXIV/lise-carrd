@@ -1,0 +1,132 @@
+.gallery {
+  display: flex;
+}
+.gallery__sidebar {
+  position: relative;
+  z-index: 0;
+  display: grid;
+  flex: 0 0 427px;
+  width: 427px;
+  min-height: 100vh;
+  background: #27252f;
+  padding: 24px 58px;
+  align-content: start;
+}
+.gallery__sidebar h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  text-align: right;
+  text-transform: uppercase;
+  color: #5d719e;
+  font-size: 64px;
+}
+.gallery__section {
+  padding: 58px;
+  column-count: 4;
+  column-gap: 16px;
+}
+.gallery__section img {
+  display: block;
+  width: 100%;
+  transform: scale(1);
+  cursor: pointer;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  break-inside: avoid;
+}
+
+.lightbox {
+  position: fixed;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.9);
+  inset: 0;
+  justify-content: center;
+}
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox__img {
+  max-width: 90%;
+  max-height: 90%;
+  user-select: none;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+  touch-action: none;
+}
+.lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  z-index: 2;
+  cursor: pointer;
+  color: #d4d2e0;
+  font-size: 30px;
+  background: #9e0000;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  justify-content: center;
+  font-weight: 600;
+}
+.lightbox__arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 80px;
+  background: #27252f;
+  cursor: pointer;
+  color: #d4d2e0;
+  border: none;
+  font-size: 40px;
+  transition: background 0.2s ease;
+  justify-content: center;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: flex;
+}
+.lightbox__arrow:hover {
+  background: #5d719e;
+}
+.lightbox__arrow--left {
+  left: 10px;
+}
+.lightbox__arrow--right {
+  right: 10px;
+}
+
+@media (max-width: 1200px) {
+  .gallery {
+    display: grid;
+    height: auto;
+  }
+  .gallery__sidebar {
+    width: 100%;
+    min-height: auto;
+  }
+  .gallery__section {
+    padding: 32px;
+    column-count: 3;
+  }
+}
+@media (max-width: 768px) {
+  .gallery__section {
+    padding: 24px;
+    column-count: 2;
+  }
+}
+@media (max-width: 480px) {
+  .gallery__section {
+    padding: 12px;
+    column-count: 1;
+  }
+}
