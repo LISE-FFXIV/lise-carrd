@@ -1,1 +1,65 @@
-gallery
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lise – The Veil of Secrets</title>
+
+    <!-- » SEO / partage -->
+    <meta name="description" content="Lise Eurelt – Veil of Secrets, Inquisitor of Ishgard." />
+    <meta name="author" content="Ton nom" />
+
+    <!-- » Open Graph (preview Discord / Twitter / etc.) -->
+    <meta property="og:title" content="Lise Eurelt – Veil of Secrets" />
+    <meta property="og:description" content="Lise Eurelt – Veil of Secrets, Inquisitor of Ishgard." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/preview.jpg" />
+
+    <!-- » Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+    <!-- » CSS -->
+    <!--
+      style.css  → reset · variables · base typography (global)
+      index.css  → layout · composants spécifiques à cette page
+    -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/pages/gallery.css" />
+
+    <!-- » Favicon -->
+    <link rel="icon" href="assets/favicon/favicon.ico" sizes="any" />
+    <link rel="icon" href="assets/favicon/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="assets/favicon/favicon-16.png" type="image/png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png" />
+  </head>
+
+  <body>
+    <!-- ===================== 📝 GALLERY ===================== -->
+
+    <main class="gallery" role="main">
+      <!-- • ════════════════════════════════════════════════
+      • SIDEBAR — profil + navigation
+      • ════════════════════════════════════════════════ -->
+      <div class="gallery__sidebar">
+        <h1>Gallery</h1>
+        <hr class="horizontal-line" />
+        <!-- ◦ navigation -->
+        <site-nav></site-nav>
+      </div>
+      <div class="gallery__section"></div>
+    </main>
+
+    <div class="lightbox" id="lightbox">
+      <span class="lightbox__close">&times;</span>
+
+      <button class="lightbox__arrow lightbox__arrow--left">&#10094;</button>
+      <button class="lightbox__arrow lightbox__arrow--right">&#10095;</button>
+
+      <img class="lightbox__img" src="" alt="" />
+    </div>
+
+    <!-- ─── Web components ───────────────────────────────────────────── -->
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/js/gallery.js"></script>
+  </body>
+</html>
