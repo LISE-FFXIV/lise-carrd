@@ -1,0 +1,392 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+// ============================================================
+// → SECTION : 1. HOME
+// ============================================================
+.home {
+  display: grid;
+  grid-template-columns:
+    minmax(410px, 500px)
+    minmax(0, 1fr)
+    360px;
+  grid-template-areas: "sidebar content portrait";
+  min-height: 100vh;
+  color: $color-text-primary;
+
+  // ─── Sidebar (colonne gauche) ──────────────────────────
+  &__sidebar {
+    grid-area: sidebar;
+    position: relative;
+    padding: $page-padding;
+    background: $bg-primary;
+    z-index: 0;
+
+    // • decorative blur
+    &::before {
+      @include blur($blue-primary, 370px, 200px);
+      top: -130px;
+      left: -225px;
+    }
+  }
+
+  // ─── Content (colonne centrale) ───────────────────────
+  &__content {
+    grid-area: content;
+    padding: $page-padding; // 58px
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  // ─── Portrait (colonne droite) ────────────────────────
+  &__portrait {
+    grid-area: portrait;
+    background-image: url("../../images/home_portrait.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: $radius-lg;
+    border: 1px solid $color-border;
+    margin: $page-padding $page-padding $page-padding 0;
+  }
+}
+
+// ============================================================
+// → SECTION : 2. PROFILE — bloc identité dans la sidebar
+// ============================================================
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: flex-end;
+  //background: blue;
+
+  // ─── Avatar, name, rank ──────────────────────────
+  &__identity {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-row-gap: 28px;
+    grid-template-areas:
+      "avatar"
+      "name"
+      "rank";
+    justify-items: end;
+  }
+
+  // • avatar
+  &__avatar {
+    grid-area: avatar;
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 999px;
+    border: 6px solid var(--brand-primary, #{$blue-primary});
+  }
+
+  // • name
+  &__name {
+    grid-area: name;
+    font-family: $playfair-display;
+    font-size: 84px;
+    line-height: 70px;
+    text-align: right;
+  }
+
+  &__name-line {
+    display: block;
+
+    &--first {
+      font-weight: 700;
+      color: $blue-tertiary;
+    }
+
+    &--last {
+      font-weight: 900;
+    }
+  }
+
+  // • rank
+  &__rank {
+    grid-area: rank;
+    padding: 8px;
+    font-family: Inter, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    background: $bg-secondary;
+    border-radius: $radius-sm;
+  }
+
+  // ─── sidebar quote ────────────────────────────
+  &__tagline {
+    position: relative;
+    display: flex;
+    gap: 18px;
+    font-family: $source-serif;
+    font-size: 37px;
+    text-align: right;
+
+    // • Trait décoratif vertical à droite
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 4px;
+      height: 100%;
+      background: url("../../images/trait.png");
+      opacity: 0.8;
+    }
+
+    // • text de la quote
+    &-text {
+      position: relative;
+      margin-right: 38px;
+
+      // • Guillemets
+      &::before,
+      &::after {
+        position: absolute;
+        font-size: 62px;
+        z-index: -1;
+        color: $background;
+      }
+
+      &::before {
+        @include fa-icon("\f10d");
+        top: -26px;
+        left: 45px;
+      }
+      &::after {
+        @include fa-icon("\f10e");
+        bottom: 8px;
+        right: -18px;
+      }
+
+      em {
+        font-weight: 600;
+      }
+
+      // • veil
+      strong {
+        @include inline-highlight();
+
+        &::before {
+          @include highlight-bar($blue-primary, 11px, 43%);
+        }
+      }
+
+      // • Mot barré + label "LIES"
+      u {
+        position: relative;
+        text-decoration: none;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 11px;
+          width: 119px;
+          height: 108px;
+          background: url("../../images/quote-red.png") no-repeat;
+          z-index: 1;
+        }
+
+        &::after {
+          content: "LIES";
+          position: absolute;
+          top: 3px;
+          left: 28px;
+          font-family: $chelsea-market;
+          font-weight: 400;
+          z-index: 2;
+        }
+      }
+    }
+  }
+}
+
+// ============================================================
+// → SECTION : 4. HERO — QUOTES
+// ============================================================
+.hero {
+  text-align: right;
+  font-family: "Source Serif 4", serif;
+  font-style: italic;
+
+  &__line {
+    font-size: 30px;
+    font-weight: 500;
+
+    // Ligne secondaire : plus grande, avec accentuation bleue
+    &--secondary {
+      font-size: 38px;
+
+      strong {
+        color: $blue-tertiary;
+      }
+    }
+  }
+}
+
+// ============================================================
+// → SECTION : 5. GALLERY
+// ============================================================
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 0;
+
+  &__item {
+    width: 100%;
+    height: 113px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+}
+
+// ============================================================
+// → SECTION : 6. LORE
+// ============================================================
+.lore {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  // ─── Quotes
+  &__quote {
+    font-family: "Source Serif 4", serif;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 500;
+
+    &--blue strong {
+      color: $blue-tertiary;
+    } // froid, Ishgard, contrôle
+    &--blood strong {
+      color: $red-tertiary;
+    } // sang, danger, secrets
+  }
+
+  // ─── Text content
+  &__body {
+    padding: 12px 0;
+    font-family: Inter, sans-serif;
+    font-size: 18px;
+
+    strong {
+      color: $blue-secondary;
+    }
+
+    em {
+      opacity: 0.5;
+    }
+
+    // ─── highlight
+    .lore__highlight {
+      @include inline-highlight();
+
+      &::before {
+        @include highlight-bar($red-primary);
+      }
+    }
+  }
+}
+
+// ============================================================
+// → SECTION : 7. TRIGGER WARNING
+// ============================================================
+.warning {
+  position: relative;
+  overflow: clip;
+  padding: 20px;
+  background: $bg-tertiary;
+  border-radius: $radius-md;
+
+  // Icône ⚠ décorative en arrière-plan
+  &::after {
+    @include fa-icon("\f071");
+    position: absolute;
+    right: -62px;
+    top: -62px;
+    font-size: 180px;
+    color: $bg-secondary;
+  }
+
+  &__title {
+    font-weight: 600;
+  }
+}
+
+// ============================================================
+// → SECTION : 8. RESPONSIVE — via mixin bp()
+// ============================================================
+// ─── Desktop large (< 1536px) ──────────────────
+@include bp(desktop-xl) {
+  .home {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "sidebar portrait"
+      "sidebar content";
+
+    grid-template-columns:
+      minmax($sidebar-min-width, $sidebar-width)
+      minmax(0, 1fr);
+
+    &__portrait {
+      margin: $page-padding $page-padding 0 $page-padding;
+      background-position: top;
+      height: 250px;
+      background-image: url("../../images/home_portrait_alt.png");
+    }
+  }
+}
+
+// ─── Desktop moyen (< 1200px) ─────────
+@include bp(desktop) {
+  .home {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "sidebar"
+      "content"
+      "portrait";
+
+    &__sidebar {
+      width: 100%;
+      padding: 32px;
+    }
+
+    &__content {
+      padding: 32px;
+    }
+
+    &__portrait {
+      display: none;
+    }
+  }
+
+  .profile {
+    &__identity {
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: 1fr auto;
+      gap: 12px;
+      grid-template-areas:
+        "name avatar"
+        "rank avatar";
+    }
+
+    &__name {
+      display: flex;
+      gap: 12px;
+      font-size: 63px;
+    }
+
+    &__avatar {
+      width: 119px;
+      height: 119px;
+      padding: 5px;
+      margin-left: 24px;
+    }
+  }
+}

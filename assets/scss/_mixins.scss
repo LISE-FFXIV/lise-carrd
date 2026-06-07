@@ -1,0 +1,87 @@
+// ════════════════════════════════════════════════════════════════
+// _mixins.scss
+//
+// Patterns répétés extraits en mixins :
+//   1. fa-icon           — pseudo-élément Font Awesome
+//   2. highlight-bar     — barre colorée derrière du texte
+//   3. inline-highlight  — wrapper pour un highlight-bar enfant
+//   4. glow              — tache lumineuse décorative (pseudo-élément)
+//   5. bp                — media queries via nom de breakpoint
+// ════════════════════════════════════════════════════════════════
+
+@use "variables" as *;
+
+// ─── 1. FA-ICON ───────────────────────────────────────────────────
+@mixin fa-icon($content, $weight: 800) {
+  font-family: $font-awesome;
+  font-weight: $weight;
+  content: $content;
+}
+
+// ─── 2. HIGHLIGHT-BAR ─────────────────────────────────────────────
+@mixin highlight-bar($color, $height: 4px, $top: 72%) {
+  position: absolute;
+  top: $top;
+  bottom: auto;
+  left: 0;
+  width: 100%;
+  height: $height;
+  background: $color;
+  z-index: -1;
+  content: "";
+}
+
+// ── 3. INLINE-HIGHLIGHT ──────────────────────────────────────────
+// Prépare un élément à recevoir un ::before highlight-bar.
+// Extrait car utilisé sur .profile__tagline b et .lore__highlight.
+//
+// Usage :
+//   .lore__highlight { @include inline-highlight(); }
+//   b { @include inline-highlight(); }
+@mixin inline-highlight() {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+
+// ── 4. BLUR ──────────────────────────────────────────────────────
+@mixin blur($color, $size: 370px, $blur: 200px) {
+  position: absolute;
+  content: "";
+  background: $color;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  filter: blur($blur);
+  pointer-events: none;
+  z-index: -1;
+}
+
+// ── 5. BP (BREAKPOINTS) ──────────────────────────────────────────
+// Media queries nommés pour éviter les valeurs magiques en dur.
+// Avant : trois @media avec des px hardcodés sans commentaire.
+//
+// Breakpoints disponibles :
+//   desktop-xl  →  < 1536px
+//   desktop     →  < 1200px  (passage en colonne unique)
+//   tablet      →  <  768px
+//   mobile      →  <  480px
+//
+// Usage :
+//   @include bp(desktop) { .layout { grid-template-columns: 1fr; } }
+$breakpoints: (
+  "desktop-xl": 1536px,
+  "desktop": 1200px,
+  "tablet": 768px,
+  "mobile": 700px,
+);
+
+@mixin bp($name) {
+  @if map-has-key($breakpoints, $name) {
+    @media (max-width: map-get($breakpoints, $name)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint `#{$name}` introuvable dans $breakpoints.";
+  }
+}

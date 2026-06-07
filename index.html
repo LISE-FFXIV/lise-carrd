@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lise – The Veil of Secrets</title>
+
+    <!-- » SEO / partage -->
+    <meta name="description" content="Lise Eurelt – Veil of Secrets, Inquisitor of Ishgard." />
+    <meta name="author" content="Ton nom" />
+
+    <!-- » Open Graph (preview Discord / Twitter / etc.) -->
+    <meta property="og:title" content="Lise Eurelt – Veil of Secrets" />
+    <meta property="og:description" content="Lise Eurelt – Veil of Secrets, Inquisitor of Ishgard." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/preview.jpg" />
+
+    <!-- » Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+    <!-- » CSS -->
+    <!--
+      style.css  → reset · variables · base typography (global)
+      index.css  → layout · composants spécifiques à cette page
+    -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/pages/index.css" />
+
+    <!-- » Favicon -->
+    <link rel="icon" href="assets/favicon/favicon.ico" sizes="any" />
+    <link rel="icon" href="assets/favicon/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="assets/favicon/favicon-16.png" type="image/png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png" />
+  </head>
+
+  <body>
+    <!-- ───────────────────────────
+      ─── PAGE HOME — grille trois colonnes
+      ─── .home
+      ───   __sidebar   → navigation + identity
+      ───   __content   → content
+      ───   __portrait  → portrait
+    ─────────────────────────── -->
+
+    <!-- ===================== 📝 HOME ===================== -->
+
+    <main class="home" role="main">
+      <!-- • ════════════════════════════════════════════════
+      • SIDEBAR — profil + navigation
+      • ════════════════════════════════════════════════ -->
+      <aside class="home__sidebar" aria-label="Character identity and navigation">
+        <!-- ◦ profile -->
+        <div class="profile">
+          <div class="profile__identity">
+            <!-- ◦ avatar -->
+            <img class="profile__avatar" src="assets/images/home_icon.png" alt="Lise Eurelt – portrait" />
+
+            <!-- ◦ identity -->
+            <div class="profile__name">
+              <span class="profile__name-line--first">LISE</span>
+              <span class="profile__name-line--last">EURELT</span>
+            </div>
+
+            <p class="profile__rank">Veil of Secrets</p>
+          </div>
+
+          <!-- ◦ quote -->
+          <div class="profile__tagline">
+            <blockquote class="profile__tagline-text">How <em>beautiful</em> the nobility is, adorned in its <strong>veil</strong> of <u>secrets</u>.</blockquote>
+          </div>
+        </div>
+
+        <!-- ◦ navigation -->
+        <site-nav></site-nav>
+      </aside>
+      <!-- /layout__sidebar -->
+
+      <!-- • ════════════════════════════════════════════════
+      • CONTENT — contenu narratif principal
+      • ════════════════════════════════════════════════ -->
+      <section class="home__content">
+        <!-- ◦ quotes -->
+        <header class="hero" aria-label="Introductory character quote">
+          <p class="hero__line hero__line--primary">"Guerrique, do you know why they named me</p>
+          <p class="hero__line hero__line--secondary">the <strong>Veil of Secrets</strong>?"</p>
+        </header>
+
+        <!-- ◦ images -->
+        <figure class="gallery" aria-label="Character illustration strip">
+          <img class="gallery__item" src="assets/images/home_01.png" alt="Lise Eurelt – illustration 1" />
+          <img class="gallery__item" src="assets/images/home_02.png" alt="Lise Eurelt – illustration 2" />
+          <img class="gallery__item" src="assets/images/home_03.png" alt="Lise Eurelt – illustration 3" />
+        </figure>
+
+        <!-- ◦ lore -->
+        <article class="lore">
+          <blockquote class="lore__quote lore__quote--blue">"Snow <strong>buries sins</strong> beneath its white shroud."</blockquote>
+
+          <p class="lore__body">
+            To some, <strong>Lise</strong> is a servant sold to the <strong>Holy See</strong>; to others, she is one who walks the edge of <em>heresy</em>. Both claims hold some truth: the
+            <span class="lore__highlight">peace of Ishgard</span> is her very reason for living. Every day, she risks her life, fighting in the hope of bringing better days to her people. Yet she
+            rejects the weight of old traditions, using her status in the <strong>Church</strong> to move in the shadows; she pretends to obey and pray, before surrendering to secret vices, far from
+            prying eyes.<br /><br />
+            An <em>Inquisitor</em> by title, she is a <strong>spy</strong>, <em>shadowy guardian of shameful secrets</em>, averting trouble before it arises, whether internal or external to Ishgard—by
+            leading a group of spies with a <span class="lore__highlight">velvet-gloved iron fist</span>. However, it is not uncommon for her to secretly take liberties, exploiting her high-ranking
+            position to silence those who would try to muzzle her. What the Holy See condemns as heresy may not trouble Lise at all; she allows many vices to slip through her net if they don't disrupt
+            the <span class="lore__highlight">peace</span> she so desperately seeks.
+          </p>
+
+          <blockquote class="lore__quote lore__quote--blood">"I <strong>bury the vices</strong> of men and <strong>the truths</strong> they are too afraid to face."</blockquote>
+        </article>
+
+        <!-- ◦ triggers warning -->
+        <aside class="warning" role="note" aria-label="Content warning">
+          <p class="warning__title">Trigger Warning | lorem ipsum</p>
+          <p class="warning__body">Latius iam disseminata licentia onerosus bonis omnibus Caesar nullum post haec adhibens modum.</p>
+        </aside>
+
+        <!-- ── Audio ambiance (désactivé) ────────────── -->
+        <!--
+        <audio class="audio-ambient" controls aria-label="Ambient soundtrack">
+          <source src="assets/audio/VO_Archive_Feixiao_7.ogg" type="audio/ogg" />
+          Your browser does not support audio playback.
+        </audio>
+        -->
+      </section>
+
+      <!-- • ════════════════════════════════════════════════
+      • PORTRAIT — illustration
+      • ════════════════════════════════════════════════ -->
+      <aside class="home__portrait" aria-label="Character portrait"></aside>
+    </main>
+
+    <!-- ─── Web components ───────────────────────────────────────────── -->
+    <script src="assets/js/nav.js"></script>
+  </body>
+</html>

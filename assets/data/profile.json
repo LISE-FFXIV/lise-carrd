@@ -1,0 +1,18 @@
+{
+  "Birthday": "24th sun of the first astral moon",
+  "Origin": "Ishgard",
+  "Residence": "Ishgard & co",
+  "Deity": "Halone",
+  "Alignment": "Neutral Good",
+  "MBTI": "MBTI",
+
+  "voiceEN": {
+    "name": "Crystal Lee <em>(Clorinde, Genshin Impact)</em>",
+    "url": "./assets/audio/english_voice.ogg"
+  },
+
+  "voiceJP": {
+    "name": "Komatsu Mikako <em>(Mavuika, Genshin Impact)</em>",
+    "url": "./assets/audio/japanese_voice.ogg"
+  }
+}

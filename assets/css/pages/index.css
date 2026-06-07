@@ -1,0 +1,319 @@
+.home {
+  display: grid;
+  grid-template-columns: minmax(410px, 500px) minmax(0, 1fr) 360px;
+  grid-template-areas: "sidebar content portrait";
+  min-height: 100vh;
+  color: #d4d2e0;
+}
+.home__sidebar {
+  grid-area: sidebar;
+  position: relative;
+  padding: 58px;
+  background: #27252f;
+  z-index: 0;
+}
+.home__sidebar::before {
+  position: absolute;
+  content: "";
+  background: #344670;
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  filter: blur(200px);
+  pointer-events: none;
+  z-index: -1;
+  top: -130px;
+  left: -225px;
+}
+.home__content {
+  grid-area: content;
+  padding: 58px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.home__portrait {
+  grid-area: portrait;
+  background-image: url("../../images/home_portrait.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  margin: 58px 58px 58px 0;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: flex-end;
+}
+.profile__identity {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  grid-row-gap: 28px;
+  grid-template-areas: "avatar" "name" "rank";
+  justify-items: end;
+}
+.profile__avatar {
+  grid-area: avatar;
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  border-radius: 999px;
+  border: 6px solid var(--brand-primary, #344670);
+}
+.profile__name {
+  grid-area: name;
+  font-family: "Playfair Display", serif;
+  font-size: 84px;
+  line-height: 70px;
+  text-align: right;
+}
+.profile__name-line {
+  display: block;
+}
+.profile__name-line--first {
+  font-weight: 700;
+  color: #5d719e;
+}
+.profile__name-line--last {
+  font-weight: 900;
+}
+.profile__rank {
+  grid-area: rank;
+  padding: 8px;
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  background: #36343f;
+  border-radius: 4px;
+}
+.profile__tagline {
+  position: relative;
+  display: flex;
+  gap: 18px;
+  font-family: "Source Serif 4", serif;
+  font-size: 37px;
+  text-align: right;
+}
+.profile__tagline::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  background: url("../../images/trait.png");
+  opacity: 0.8;
+}
+.profile__tagline-text {
+  position: relative;
+  margin-right: 38px;
+}
+.profile__tagline-text::before, .profile__tagline-text::after {
+  position: absolute;
+  font-size: 62px;
+  z-index: -1;
+  color: #16151c;
+}
+.profile__tagline-text::before {
+  font-family: "Font Awesome 7 Free";
+  font-weight: 800;
+  content: "\f10d";
+  top: -26px;
+  left: 45px;
+}
+.profile__tagline-text::after {
+  font-family: "Font Awesome 7 Free";
+  font-weight: 800;
+  content: "\f10e";
+  bottom: 8px;
+  right: -18px;
+}
+.profile__tagline-text em {
+  font-weight: 600;
+}
+.profile__tagline-text strong {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+.profile__tagline-text strong::before {
+  position: absolute;
+  top: 43%;
+  bottom: auto;
+  left: 0;
+  width: 100%;
+  height: 11px;
+  background: #344670;
+  z-index: -1;
+  content: "";
+}
+.profile__tagline-text u {
+  position: relative;
+  text-decoration: none;
+}
+.profile__tagline-text u::before {
+  content: "";
+  position: absolute;
+  top: 11px;
+  width: 119px;
+  height: 108px;
+  background: url("../../images/quote-red.png") no-repeat;
+  z-index: 1;
+}
+.profile__tagline-text u::after {
+  content: "LIES";
+  position: absolute;
+  top: 3px;
+  left: 28px;
+  font-family: "Chelsea Market", system-ui;
+  font-weight: 400;
+  z-index: 2;
+}
+
+.hero {
+  text-align: right;
+  font-family: "Source Serif 4", serif;
+  font-style: italic;
+}
+.hero__line {
+  font-size: 30px;
+  font-weight: 500;
+}
+.hero__line--secondary {
+  font-size: 38px;
+}
+.hero__line--secondary strong {
+  color: #5d719e;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 0;
+}
+.gallery__item {
+  width: 100%;
+  height: 113px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.lore {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.lore__quote {
+  font-family: "Source Serif 4", serif;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 500;
+}
+.lore__quote--blue strong {
+  color: #5d719e;
+}
+.lore__quote--blood strong {
+  color: #d40c02;
+}
+.lore__body {
+  padding: 12px 0;
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+}
+.lore__body strong {
+  color: #475a85;
+}
+.lore__body em {
+  opacity: 0.5;
+}
+.lore__body .lore__highlight {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+.lore__body .lore__highlight::before {
+  position: absolute;
+  top: 72%;
+  bottom: auto;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #9e0000;
+  z-index: -1;
+  content: "";
+}
+
+.warning {
+  position: relative;
+  overflow: clip;
+  padding: 20px;
+  background: #484651;
+  border-radius: 8px;
+}
+.warning::after {
+  font-family: "Font Awesome 7 Free";
+  font-weight: 800;
+  content: "\f071";
+  position: absolute;
+  right: -62px;
+  top: -62px;
+  font-size: 180px;
+  color: #36343f;
+}
+.warning__title {
+  font-weight: 600;
+}
+
+@media (max-width: 1536px) {
+  .home {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "sidebar portrait" "sidebar content";
+    grid-template-columns: minmax(410px, 500px) minmax(0, 1fr);
+  }
+  .home__portrait {
+    margin: 58px 58px 0 58px;
+    background-position: top;
+    height: 250px;
+    background-image: url("../../images/home_portrait_alt.png");
+  }
+}
+@media (max-width: 1200px) {
+  .home {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "sidebar" "content" "portrait";
+  }
+  .home__sidebar {
+    width: 100%;
+    padding: 32px;
+  }
+  .home__content {
+    padding: 32px;
+  }
+  .home__portrait {
+    display: none;
+  }
+  .profile__identity {
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: 1fr auto;
+    gap: 12px;
+    grid-template-areas: "name avatar" "rank avatar";
+  }
+  .profile__name {
+    display: flex;
+    gap: 12px;
+    font-size: 63px;
+  }
+  .profile__avatar {
+    width: 119px;
+    height: 119px;
+    padding: 5px;
+    margin-left: 24px;
+  }
+}

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lise – The Veil of Secrets</title>
+
+    <!-- » SEO / partage -->
+    <meta name="description" content="Lise Eurelt – Veil of Secrets, Inquisitor of Ishgard." />
+    <meta name="author" content="Ton nom" />
+
+    <!-- » Open Graph (preview Discord / Twitter / etc.) -->
+    <meta property="og:title" content="Lise Eurelt – Veil of Secrets" />
+    <meta property="og:description" content="Lise Eurelt – Veil of Secrets, Inquisitor of Ishgard." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/preview.jpg" />
+
+    <!-- » Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+    <!-- » CSS -->
+    <!--
+      style.css  → reset · variables · base typography (global)
+      index.css  → layout · composants spécifiques à cette page
+    -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/pages/profile.css" />
+
+    <!-- » Favicon -->
+    <link rel="icon" href="assets/favicon/favicon.ico" sizes="any" />
+    <link rel="icon" href="assets/favicon/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="assets/favicon/favicon-16.png" type="image/png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png" />
+  </head>
+
+  <body>
+    <!-- ───────────────────────────
+      ─── PAGE HOME — grille trois colonnes
+      ─── .home
+      ───   __sidebar   → navigation + identity
+      ───   __content   → content
+      ───   __portrait  → portrait
+    ─────────────────────────── -->
+
+    <!-- ===================== 📝 PROFILE ===================== -->
+
+    <main class="profile" role="main">
+      <!-- • ════════════════════════════════════════════════
+      • SIDEBAR — profil + navigation
+      • ════════════════════════════════════════════════ -->
+      <div class="profile__sidebar">
+        <!-- ◦ navigation -->
+        <site-nav></site-nav>
+        <character-section class="sidebar__identity" data-file="identity" title="01. Identity"></character-section>
+        <hr class="horizontal-line" />
+        <character-section class="sidebar__profile" data-file="profile" title="02. Profile"></character-section>
+        <hr class="horizontal-line" />
+        <character-section class="sidebar__pets" data-file="pets" title="03. Pets"></character-section>
+      </div>
+
+      <!-- • ════════════════════════════════════════════════
+      • CHARACTER
+      • ════════════════════════════════════════════════ -->
+      <div class="profile__character">
+        <div class="character__trait">
+          Devoted ━ Defiant ━ Reliable (when it matters) ━ Sharp-tongued ━ Selectively loyal ━ Selectively disobedient ━ Clever ━ Sharp and poisonous ━ Authentic ━ Territorial ━ Seductive ━ Capricious
+          ━ Fiercely protective ━ Outspoken ━ Mischievous ━ Ruthlessly pragmatic ━ Fearless ━ Vindictive ━ Open-minded ━ Control freak
+        </div>
+        <aside class="character__image" aria-label="Character portrait"></aside>
+
+        <div class="character__content">
+          Lise is a fucking brat, plain and simple. Whilst she’s a fiercely loyal friend, she’s nonetheless a particularly unpredictable and exasperating free spirit. She lives by her own rules: does
+          what she wants, when she wants, how she wants and the most infuriating part? She’s good at it, leaving little room to argue with the results. She obeys - partially, hunts, kills, lies, and
+          bends the truth to fit her own. She drinks, smokes, indulges in heretical pleasures, and shows herself to be curious and open to change despite her firmly held beliefs.<br /><br />She’s a
+          strong woman who masks her insecurities and lack of confidence behind an overwhelming extraversion; sometimes quiet, sometimes loud once she feels comfortable. One time she’s the one you
+          have to carry home on your back; the next, she’s the one who’ll let you spend the night on her sofa. A woman of many faces and identities; a troublesome brat eager to sink her teeth into
+          life, full of contradictions and paradoxes, capable of unwavering professionalism as much as unrestrained chaos when she lets herself slip. <br /><br />Loyal ally or merciless huntress -
+          depends entirely on the angle you choose.
+        </div>
+      </div>
+
+      <div class="profile__hr"></div>
+
+      <div class="profile__visual">
+        <aside class="visual__image" aria-label="Character portrait"></aside>
+        <character-section class="visual__content" data-file="visual" title="05. Visual"></character-section>
+      </div>
+      <character-section class="profile__story" data-file="story" title="06. Story"></character-section>
+    </main>
+    <!-- ─── Web components ───────────────────────────────────────────── -->
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/js/profile.js"></script>
+    <script src="assets/js/character.js"></script>
+  </body>
+</html>

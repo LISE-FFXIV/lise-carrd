@@ -1,0 +1,105 @@
+// ===============================================================
+// = style.scss — reset · base · fonts (global, toutes les pages)
+// ===============================================================
+
+@use "variables" as *;
+@use "mixins" as *;
+
+// ─── Google Fonts ─────────────────────────────────────────────────
+@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
+
+// ─── Reset ────────────────────────────────────────────────────────
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+p,
+blockquote,
+figure,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+// ─── Base ────────────────────────────────────────────────────────
+
+body {
+  background: $background;
+  margin: 0;
+  font-optical-sizing: auto;
+  font-family: $inter;
+}
+
+// ─── Navigation ────────────────────────────────────────────────────────
+nav {
+  margin-top: 24px;
+  text-align: right;
+
+  // • titre "navigation"
+  .titre {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    // • icon »
+    &::before {
+      @include fa-icon("\f101");
+      margin-right: 14px;
+      color: $blue-tertiary;
+    }
+  }
+
+  // • liens de navigation
+  .nav-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  a {
+    padding: 10px 14px;
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-text-primary;
+    background: $bg-secondary;
+    text-decoration: none;
+    border-radius: $radius-sm;
+    transition: background 0.2s ease;
+
+    &:hover:not(.active) {
+      background: $bg-tertiary;
+    }
+
+    &.active {
+      display: flex;
+      align-items: center;
+      background: $blue-tertiary;
+      font-weight: 700;
+
+      &::before {
+        @include fa-icon("\f111");
+        margin-right: 10px;
+        font-size: 6px;
+        color: $bg-primary;
+      }
+    }
+  }
+}
+
+// ─── horizontal-line ────────────────────────────────────────────────────────
+.horizontal-line {
+  border: 0;
+  height: 4px;
+  width: 100%;
+  background-image: url("../images/horizontal-line.png");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.8;
+}

@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+p,
+blockquote,
+figure,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #16151c;
+  margin: 0;
+  font-optical-sizing: auto;
+  font-family: "Inter", sans-serif;
+}
+
+nav {
+  margin-top: 24px;
+  text-align: right;
+}
+nav .titre {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+nav .titre::before {
+  font-family: "Font Awesome 7 Free";
+  font-weight: 800;
+  content: "\f101";
+  margin-right: 14px;
+  color: #5d719e;
+}
+nav .nav-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+nav a {
+  padding: 10px 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #d4d2e0;
+  background: #36343f;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+nav a:hover:not(.active) {
+  background: #484651;
+}
+nav a.active {
+  display: flex;
+  align-items: center;
+  background: #5d719e;
+  font-weight: 700;
+}
+nav a.active::before {
+  font-family: "Font Awesome 7 Free";
+  font-weight: 800;
+  content: "\f111";
+  margin-right: 10px;
+  font-size: 6px;
+  color: #27252f;
+}
+
+.horizontal-line {
+  border: 0;
+  height: 4px;
+  width: 100%;
+  background-image: url("../images/horizontal-line.png");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.8;
+}

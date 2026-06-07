@@ -1,0 +1,101 @@
+// ==============================
+// 🎨 1. PRIMITIVES (RAW COLORS)
+// ==============================
+
+// NEUTRALS (ZINC)
+$theme-50: #f5f4fc;
+$theme-100: #e8e7ee;
+$theme-200: #d4d2e0;
+$theme-300: #b8b5c3;
+$theme-400: #92909d;
+$theme-500: #72707c;
+$theme-600: #5b5965;
+$theme-700: #484651;
+$theme-800: #36343f;
+$theme-900: #27252f;
+$theme-950: #16151c;
+
+// BRAND (BLUE)
+$blue-50: #e8f5ff;
+$blue-100: #dbe8ff;
+$blue-200: #bdd4ff;
+$blue-300: #a1b7e8;
+$blue-400: #7d92c1;
+$blue-500: #5d719e;
+$blue-600: #475a85;
+$blue-700: #344670;
+$blue-800: #23335c;
+$blue-900: #15244b;
+$blue-950: #0a142e;
+
+// BRAND (RED)
+$red-50: #ffd6c5;
+$red-100: #ffc9b8;
+$red-200: #ff9178;
+$red-300: #ff715c;
+$red-400: #fd4634;
+$red-500: #d40c02;
+$red-600: #b70000;
+$red-700: #9e0000;
+$red-800: #850000;
+$red-900: #6f0000;
+$red-950: #470000;
+
+// ==============================
+// = 🧠 2. SEMANTIC TOKENS
+// ==============================
+
+// ── 2. SEMANTIC TOKENS ───────────────────────────────────────────
+// Ces variables sont les seules à utiliser dans les composants.
+
+// Backgrounds — du plus foncé au plus clair
+$background: $theme-950; // fond global de la page
+$bg-primary: $theme-900; // surfaces principales (sidebar)
+$bg-secondary: $theme-800; // surfaces secondaires (boutons, tags)
+$bg-tertiary: $theme-700; // surfaces tertiaires (cartes, warning)
+
+// Texte
+$color-text-primary: $theme-200;
+$color-text-secondary: $theme-300;
+$color-text-muted: $theme-400;
+
+// Bordures et ombres
+$color-border: rgba(0, 0, 0, 0.4);
+$color-shadow: $theme-900;
+
+// Accents — Blue (brand)
+$blue-primary: $blue-700; // glow, highlights forts
+$blue-secondary: $blue-600; // texte accentué dans le lore
+$blue-tertiary: $blue-500; // icônes, liens actifs, texte léger
+
+// Accents — Red (danger / sang / secret)
+$red-primary: $red-700; // soulignements narratifs
+$red-secondary: $red-600;
+$red-tertiary: $red-500; // texte de citation danger
+
+// // LINES
+// $line-title: $zinc-700;
+// $line-subtitle: $zinc-600;
+
+// ==============================
+// = ✍️ 3. TYPOGRAPHY
+// ==============================
+$inter: "Inter", sans-serif;
+$source-serif: "Source Serif 4", serif;
+$playfair-display: "Playfair Display", serif;
+$chelsea-market: "Chelsea Market", system-ui;
+$font-awesome: "Font Awesome 7 Free";
+
+// ── 3. LAYOUT TOKENS ─────────────────────────────────────────────
+// Dimensions partagées entre composants et media queries.
+
+$sidebar-width: 500px;
+$sidebar-min-width: 410px;
+$portrait-width: 360px;
+$page-padding: 58px;
+
+// Border-radius
+$radius-xs: 2px;
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 24px;

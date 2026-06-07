@@ -1,0 +1,16 @@
+{
+  "pets": [
+    {
+      "name": "Idem",
+      "title": "THE FATTY FAT PRINCESS",
+      "image": "./assets/images/idem.png",
+      "text": "Latius iam disseminata licentia onerosus bonis omnibus Caesar nullum post haec adhibens modum orientis latera cuncta vexabat nec honoratis parcens nec urbium primatibus nec plebeiis."
+    },
+    {
+      "name": "Ornstein",
+      "title": "ALBINOS CHOCOBO",
+      "image": "./assets/images/ornstein.png",
+      "text": "Latius iam disseminata licentia onerosus bonis omnibus Caesar nullum post haec adhibens modum orientis latera cuncta vexabat nec honoratis parcens nec urbium primatibus nec plebeiis."
+    }
+  ]
+}
